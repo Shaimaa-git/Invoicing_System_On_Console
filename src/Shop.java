@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Shop {
     private String shopName;
@@ -14,6 +11,12 @@ public class Shop {
         this.invoiceHeader = new HashMap<>();
         this.items = new ArrayList<>();
         this.invoices = new ArrayList<>();
+    }
+
+    public static void setItems(List<Item> items) {
+    }
+
+    public static void setInvoices(List<Invoice> invoices) {
     }
 
     // Setters for shop name and invoice header
@@ -65,4 +68,30 @@ public class Shop {
     public List<Invoice> getInvoices() {
         return invoices;
     }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public Map<String, String> getInvoiceHeader() {
+        return invoiceHeader;
+    }
+
+    public void setInvoiceHeader(Map<String, String> invoiceHeader) {
+        this.invoiceHeader = invoiceHeader;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Shop shop = (Shop) o;
+        return Objects.equals(shopName, shop.shopName) && Objects.equals(invoiceHeader, shop.invoiceHeader) && Objects.equals(items, shop.items) && Objects.equals(invoices, shop.invoices);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shopName, invoiceHeader, items, invoices);
+    }
+
 }

@@ -18,21 +18,29 @@ public class Main {
                 switch (choice) {
                     case 1:
                         System.out.println("Shop Settings Menu:");
-                        System.out.println("1- Set Shop Name");
-                        System.out.println("2- Set Invoice Header");
-                        System.out.println("3- Go Back");
+                        System.out.println("1- Load Data (Items and invoices)");
+                        System.out.println("2- Set Shop Name");
+                        System.out.println("3- Set Invoice Header");
+                        System.out.println("4- Go Back");
 
                         System.out.print("Enter your choice: ");
                         int settingChoice = scanner.nextInt();
                         switch (settingChoice) {
                             case 1:
+                                List<Item> items = DataLoader.loadItems();
+                                List<Invoice> invoices = DataLoader.loadInvoices(items);
+                                shop.setItems(items);
+                                shop.setInvoices(invoices);
+                                System.out.println("Data loaded successfully.");
+                                break;
+                            case 2:
                                 System.out.print("Enter new shop name: ");
                                 scanner.nextLine(); // Clear the input buffer
                                 String newShopName = scanner.nextLine();
                                 shop.setShopName(newShopName);
                                 System.out.println("Shop name set to: " + newShopName);
                                 break;
-                            case 2:
+                            case 3:
                                 System.out.println("Enter Invoice Header Information:");
                                 System.out.print("Telephone: ");
                                 String tel = scanner.next();
@@ -45,7 +53,7 @@ public class Main {
                                 shop.setInvoiceHeader(tel, fax, email, website);
                                 System.out.println("Invoice header information set successfully.");
                                 break;
-                            case 3:
+                            case 4:
                                 // Go back to main menu
                                 break;
                             default:
