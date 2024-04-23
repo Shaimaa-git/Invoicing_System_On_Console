@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataLoader {
-
+    public static Shop shop;
     // Method to load sample items
     public static List<Item> loadItems() {
         List<Item> items = new ArrayList<>();
@@ -28,4 +28,12 @@ public class DataLoader {
 
         return invoices;
     }
+    public static void getDataLoaderSetting(){
+        List<Item> items = DataLoader.loadItems();
+        List<Invoice> invoices = DataLoader.loadInvoices(items);
+        shop.setItems(items);
+        shop.setInvoices(invoices);
+        System.out.println("Data loaded successfully.");
+    }
 }
+
