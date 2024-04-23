@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Shop {
+
     private String shopName;
     private Map<String, String> invoiceHeader;
     private List<Item> items;
@@ -22,6 +23,14 @@ public class Shop {
     // Setters for shop name and invoice header
     public void setShopName(String shopName) {
         this.shopName = shopName;
+    }
+    public static void getShopNameSetting(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter new shop name: ");
+        scanner.nextLine(); // Clear the input buffer
+        String newShopName = scanner.nextLine();
+        DataLoader.shop.setShopName(newShopName);
+        System.out.println("Shop name set to: " + newShopName);
     }
 
     public void setInvoiceHeader(String tel, String fax, String email, String website) {
