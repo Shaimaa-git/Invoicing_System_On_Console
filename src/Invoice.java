@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Invoice {
     private static int nextInvoiceNumber = 1;
-
     private int invoiceNumber;
     private String customerName;
     private String phoneNumber;
