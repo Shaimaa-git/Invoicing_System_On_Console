@@ -1,4 +1,5 @@
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Item {
     private int itemId;
@@ -10,7 +11,32 @@ public class Item {
         this.itemName = itemName;
         this.unitPrice = unitPrice;
     }
-
+    public static void getAddItemSetting(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Item ID: ");
+        int itemId = scanner.nextInt();
+        System.out.print("Enter Item Name: ");
+        String itemName = scanner.next();
+        System.out.print("Enter Unit Price: ");
+        double unitPrice = scanner.nextDouble();
+        Item newItem = new Item(itemId, itemName, unitPrice);
+        DataLoader.shop.addItem(newItem);
+        System.out.println("Item added successfully.");
+    }
+    public static void getItemDeletionSetting(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Item ID to delete: ");
+        int deleteItemId = scanner.nextInt();
+        DataLoader.shop.deleteItem(deleteItemId);
+    }
+    public static void getItemChangePriceSetting(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Item ID to change price: ");
+        int changeItemId = scanner.nextInt();
+        System.out.print("Enter new price: ");
+        double newPrice = scanner.nextDouble();
+        DataLoader.shop.changeItemPrice(changeItemId, newPrice);
+    }
     public int getItemId() {
         return itemId;
     }
