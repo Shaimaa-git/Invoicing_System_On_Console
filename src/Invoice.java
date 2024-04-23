@@ -65,7 +65,7 @@ public class Invoice {
         while (true) {
             System.out.print("Enter item ID (or -1 to finish adding items): ");
             int itemId = scanner.nextInt();
-            if (itemId == -1) {
+            if (itemId == -1) { //TODO: What if it is less than -1
                 break;
             }
             // Search for item by ID and add to the invoice
@@ -87,7 +87,7 @@ public class Invoice {
         // Add invoice to shop or perform any further actions as needed
         System.out.println("Invoice created successfully.");
     }
-    public static void getReporteStatication(){
+    public static void getReporteStatication(){ //FIXME: Typo in the name
         System.out.println("Report: Statistics Menu:");
         int totalItems = 0;
         int totalInvoices = DataLoader.shop.getInvoices().size();
@@ -110,6 +110,8 @@ public class Invoice {
         if (allInvoices.isEmpty()) {
             System.out.println("No invoices found.");
         } else {
+
+            //Brilliant use of string parameters
             System.out.printf("%-15s %-15s %-15s %-15s %-15s\n", "Invoice No", "Invoice Date", "Customer Name", "No of Items", "Total");
             for (int i = 0; i < allInvoices.size(); i++) {
                 Invoice invoice = allInvoices.get(i);
@@ -117,7 +119,7 @@ public class Invoice {
             }
         }
     }
-    public static void getSearchInvoice(){
+    public static void getSearchInvoice(){ //Good code can be improved
         Scanner scanner = new Scanner(System.in);
         System.out.println("Search Invoices Menu:");
         System.out.print("Enter Invoice Number: ");

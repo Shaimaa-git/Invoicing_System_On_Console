@@ -1,6 +1,8 @@
 import java.util.Map;
 
 public class Menu {
+
+    //Perfect
     public static void show() {
         System.out.println("1- Shop Settings");
         System.out.println("2- Manage Shop Items");
