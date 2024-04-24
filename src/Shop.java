@@ -27,10 +27,11 @@ public class Shop {
     public static void getShopNameSetting(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter new shop name: ");
-        scanner.nextLine(); // Clear the input buffer
         String newShopName = scanner.nextLine();
-        DataLoader.shop.setShopName(newShopName);
+        Shop shop = new Shop(newShopName);
+        DataLoader.shop = shop;
         System.out.println("Shop name set to: " + newShopName);
+        scanner.nextLine(); // Clear the input buffer
     }
 
     public void setInvoiceHeader(String tel, String fax, String email, String website) {

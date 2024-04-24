@@ -11,6 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Shop shop = new Shop("My Grocery Shop");
 
+        //noinspection InfiniteLoopStatement
         while (true) {
             try {
                 Menu.show();
@@ -70,7 +71,7 @@ public class Main {
                         break;
 
                     case 4:
-                        Invoice.getReporteStatication();
+                        Invoice.getReportStatistics();
                         break;
 
                     case 5:
@@ -104,4 +105,3 @@ public class Main {
         }
     }
 }
-

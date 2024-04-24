@@ -68,7 +68,10 @@ public class Invoice {
             if (itemId == -1) { //TODO: What if it is less than -1
                 break;
             }
-            // Search for item by ID and add to the invoice
+            else {
+                System.out.println("Invalid Input. Enter a number greater then -1");
+            }
+                // Search for item by ID and add to the invoice
             boolean found = false;
             for (Item item : DataLoader.shop.getItems()) {
                 if (item.getItemId() == itemId) {
@@ -87,7 +90,8 @@ public class Invoice {
         // Add invoice to shop or perform any further actions as needed
         System.out.println("Invoice created successfully.");
     }
-    public static void getReporteStatication(){ //FIXME: Typo in the name
+
+    public static void getReportStatistics(){ //FIXME: Typo in the name
         System.out.println("Report: Statistics Menu:");
         int totalItems = 0;
         int totalInvoices = DataLoader.shop.getInvoices().size();
