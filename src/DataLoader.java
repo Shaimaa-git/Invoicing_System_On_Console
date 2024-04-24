@@ -22,16 +22,12 @@ public class DataLoader {
         invoices.add(createInvoice("John Doe", "1234567890", "2024-04-20", items, new int[]{0}, new int[]{2}));
         invoices.add(createInvoice("Jane Smith", "9876543210", "2024-04-19", items, new int[]{1, 2}, new int[]{3, 1}));
 
-        //TODO: Update variable name
-        Invoice invoice1 = new Invoice("John Doe", "1234567890", "2024-04-20");
-        invoice1.addItem(items.get(0), 2); // Add Apple (ID: 1) with quantity 2
-        invoices.add(invoice1);
+        Invoice customer1 = new Invoice("John Doe", "1234567890", "2024-04-20");
+        customer1.addItem(items.get(0), 2); // Add Apple (ID: 1) with quantity 2
+        invoices.add(customer1);
 
-        //TODO: Instead of repeating the code make function and pass params
-        Invoice invoice2 = new Invoice("Jane Smith", "9876543210", "2024-04-19");
-        invoice2.addItem(items.get(1), 3); // Add Banana (ID: 2) with quantity 3
-        invoice2.addItem(items.get(2), 1); // Add Orange (ID: 3) with quantity 1
-        invoices.add(invoice2);
+        addItemsToInvoice(invoices, items, "Jane Smith", "9876543210", "2024-04-19", new int[]{1, 2}, new int[]{3, 1});
+
         return invoices;
     }
 
@@ -55,4 +51,12 @@ public class DataLoader {
         return null;
     }
 
+    // Function to add items to an invoice
+    private static void addItemsToInvoice(List<Invoice> invoices, List<Item> items, String customerName, String phoneNumber, String invoiceDate, int[] itemIndices, int[] quantities) {
+        Invoice invoice = new Invoice(customerName, phoneNumber, invoiceDate);
+        for (int i = 0; i < itemIndices.length; i++) {
+            invoice.addItem(items.get(itemIndices[i]), quantities[i]);
+        }
+        invoices.add(invoice);
+    }
 }
