@@ -3,6 +3,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+
+    //Good idea to use Hashmaps
     static Map<Integer, Integer> menuSelections = new HashMap<>();
 
     public static void main(String[] args) {
