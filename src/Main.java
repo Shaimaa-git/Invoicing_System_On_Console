@@ -6,7 +6,6 @@ public class Main {
 
     //Good idea to use Hashmaps
     static Map<Integer, Integer> menuSelections = new HashMap<>();
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Shop shop = new Shop("My Grocery Shop");
