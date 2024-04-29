@@ -1,7 +1,7 @@
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Item {
+public class Item implements itemBehavior {
     private int itemId;
     private String itemName;
     private double unitPrice;
@@ -37,26 +37,27 @@ public class Item {
         double newPrice = scanner.nextDouble();
         DataLoader.shop.changeItemPrice(changeItemId, newPrice);
     }
+    @Override
     public int getItemId() {
         return itemId;
     }
-
+    @Override
     public void setItemId(int itemId) {
         this.itemId = itemId;
     }
-
+    @Override
     public String getItemName() {
         return itemName;
     }
-
+    @Override
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
-
+    @Override
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
-
+    @Override
     public double getUnitPrice() {
         return unitPrice;
     }
