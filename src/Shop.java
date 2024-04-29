@@ -21,6 +21,7 @@ public class Shop implements shopBehavior {
     }
 
     // Setters for shop name and invoice header
+    @Override
     public void setShopName(String shopName) {
         this.shopName = shopName;
     }
@@ -33,27 +34,27 @@ public class Shop implements shopBehavior {
         System.out.println("Shop name set to: " + newShopName);
         scanner.nextLine(); // Clear the input buffer
     }
-
+    @Override
     public void setInvoiceHeader(String tel, String fax, String email, String website) {
         invoiceHeader.put("Telephone", tel);
         invoiceHeader.put("Fax", fax);
         invoiceHeader.put("Email", email);
         invoiceHeader.put("Website", website);
     }
-
+    @Override
     // Methods for managing items
     public void addItem(Item item) {
         items.add(item);
     }
-
+    @Override
     public List<Item> getItems() {
         return items;
     }
-
+    @Override
     public void deleteItem(int itemId) {
         items.removeIf(item -> item.getItemId() == itemId);
     }
-
+    @Override
     public void changeItemPrice(int itemId, double newPrice) {
         for (Item item : items) {
             if (item.getItemId() == itemId) {
@@ -62,31 +63,31 @@ public class Shop implements shopBehavior {
             }
         }
     }
-
+    @Override
     public void reportAllItems() {
         System.out.println("All Shop Items:");
         for (Item item : items) {
             System.out.println(item);
         }
     }
-
+    @Override
     // Methods for managing invoices
     public void addInvoice(Invoice invoice) {
         invoices.add(invoice);
     }
-
+    @Override
     public List<Invoice> getInvoices() {
         return invoices;
     }
-
+    @Override
     public String getShopName() {
         return shopName;
     }
-
+    @Override
     public Map<String, String> getInvoiceHeader() {
         return invoiceHeader;
     }
-
+    @Override
     public void setInvoiceHeader(Map<String, String> invoiceHeader) {
         this.invoiceHeader = invoiceHeader;
     }
@@ -103,5 +104,6 @@ public class Shop implements shopBehavior {
     public int hashCode() {
         return Objects.hash(shopName, invoiceHeader, items, invoices);
     }
+
 
 }
