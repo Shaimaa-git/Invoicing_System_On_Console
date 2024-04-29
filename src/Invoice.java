@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Invoice {
+public class Invoice implements invoiceBehavior{
     private static int nextInvoiceNumber = 1;
     private int invoiceNumber;
     private String customerName;
