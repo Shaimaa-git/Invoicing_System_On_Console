@@ -158,27 +158,28 @@ public class Invoice implements invoiceBehavior{
             System.out.println("Invoice with number " + searchInvoiceNumber + " not found.");
         }
     }
+    @Override
     // Getters for invoice details
     public int getInvoiceNumber() {
         return invoiceNumber;
     }
-
+    @Override
     public String getCustomerName() {
         return customerName;
     }
-
+    @Override
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
+    @Override
     public String getInvoiceDate() {
         return invoiceDate;
     }
-
+    @Override
     public List<Item> getItems() {
         return items;
     }
-
+    @Override
     public int getQuantityForItem(Item item) {
         int index = items.indexOf(item);
         if (index != -1) {
@@ -186,7 +187,7 @@ public class Invoice implements invoiceBehavior{
         }
         return 0;
     }
-
+    @Override
     public double getItemAmount(Item item) {
         int index = items.indexOf(item);
         if (index != -1) {
@@ -194,15 +195,15 @@ public class Invoice implements invoiceBehavior{
         }
         return 0;
     }
-
+    @Override
     public double getTotalAmount() {
         return totalAmount;
     }
-
+    @Override
     public double getPaidAmount() {
         return paidAmount;
     }
-
+    @Override
     public double getBalance() {
         return balance;
     }
