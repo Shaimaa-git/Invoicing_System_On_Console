@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Shop {
+public class Shop implements shopBehavior {
 
     private String shopName;
     private Map<String, String> invoiceHeader;
